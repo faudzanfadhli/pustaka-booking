@@ -24,4 +24,8 @@ class Latihan1 extends CI_Controller
 
         $this->load->view('view_latihan1', $data);
     }
+
+    public function onchange_event() {
+        $this->load->view('onChange_event');
+    }
 }

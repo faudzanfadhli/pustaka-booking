@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Prog II | Merancang Template sederhana dengan CodeIgniter</title>
-  <link rel="stylesheet" type="text/css" href="../../assets/css/stylebuku.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/stylebuku.css">
 </head>
 <body>
   <div id="wrapper">
