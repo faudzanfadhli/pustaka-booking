@@ -32,6 +32,11 @@ class ModelBuku extends CI_Model {
     return $this->db->get()->row($field);
   }
 
+  public function bukuTotalRecord() {
+    $this->db->from('buku');
+    return $this->db->count_all_result();
+  }
+
   //manajemen kategori
   public function getKategori() {
     return $this->db->get('kategori');
