@@ -19,7 +19,8 @@ class Home extends CI_Controller {
 
     //menentukan offset record dari uri segment
     $awal = $this->uri->segment(3, 0);
-    $baris = $this->ModelBuku->bukuLimit($config['per_page'], $awal)->result();
+    // $baris = $this->ModelBuku->bukuLimit($config['per_page'], $awal)->result();
+    $baris = $this->ModelBuku->getLimitBuku($config['per_page'], $awal)->result();
 
     $data = [
       'judul' => "Katalog Buku",
@@ -36,13 +37,13 @@ class Home extends CI_Controller {
       $data['user'] = $user['nama'];
 
       $this->load->view('templates/templates-user/header', $data);
-      $this->load->view('buku/daftarbuku', $data);
+      $this->load->view('buku/daftar_buku', $data);
       $this->load->view('templates/templates-user/modal');
       $this->load->view('templates/templates-user/footer', $data);
     } else {
       $data['user'] = 'Pengunjung';
       $this->load->view('templates/templates-user/header', $data);
-      $this->load->view('buku/daftarbuku', $data);
+      $this->load->view('buku/daftar_buku', $data);
       $this->load->view('templates/templates-user/modal');
       $this->load->view('templates/templates-user/footer', $data);
     }

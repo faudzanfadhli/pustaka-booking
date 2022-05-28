@@ -34,7 +34,7 @@ class ModelBuku extends CI_Model {
 
   public function bukuTotalRecord() {
     $this->db->from('buku');
-    return $this->db->count_all_result();
+    return $this->db->count_all_results();
   }
 
   //manajemen kategori
@@ -65,5 +65,10 @@ class ModelBuku extends CI_Model {
     $this->db->join('kategori', 'kategori.id = buku.id_kategori');
     $this->db->where($where);
     return $this->db->get();
+  }
+
+  public function getLimitBuku() {
+    $this->db->limit(5);
+    return $this->db->get('buku');
   }
 }
